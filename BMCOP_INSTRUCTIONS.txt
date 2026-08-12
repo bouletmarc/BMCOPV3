@@ -1,0 +1,127 @@
+/**********************************************************************
+***********************************************************************/
+       __________  ______      ____  _   __   ____  __    __  ________
+      / ____/ __ \/  _/ /     / __ \/ | / /  / __ \/ /   / / / / ____/
+     / /   / / / // // /     / / / /  |/ /  / /_/ / /   / / / / / __  
+    / /___/ /_/ // // /___  / /_/ / /|  /  / ____/ /___/ /_/ / /_/ /  
+    \____/\____/___/_____/  \____/_/ |_/  /_/   /_____/\____/\____/   
+    
+COIL ON PLUG Script V3.X for Pico2 (RP2350) made by Bouletmarc (BMDevs)
+
+The Coil On Plugs Adapter is intended to be used on Honda/Acura 4cylinders
+cars running on a distributor normally. (Mostly Serie B-D-F-H Engines)
+
+This application samples require Three Signals wires (ICM, FC1 Pin3 & FC1 Pin4)
+It activate 4x Digital ouputs pins (used to trigger each coils)
+depending on which cylinder should fire.
+
+***********************************************************************/
+***********************************************************************/
+***********************************************************************/
+REQUIREMENTS:
+***********************************************************************/
+-1x BMCOP V3 Adapter Kit
+-4x Coils Pack (from K20/K24?)
+-Couple Wires (atleast 4x that cover the distance between the ECU and the Coils where they will be installed on the engine.
+-1x OBD1 ECU
+-Soldering Skills
+
+
+***********************************************************************/
+INTALLATION:
+***********************************************************************/
+1. Remove the ECU from the vehicle and open the case to solders the parts
+
+2. Remove the Solders at FC1 locations and solder the 12pins male header
+(If the ecu has a Knock Board installed, you must removed the board and install the 12pins male header)
+
+3. Solder the 4pins (2x2) male header on the BMCOP adapter on the side you prefer
+(if you prefer the 4pins header on the back or the front of the BMCOP adapter)
+->If required drill a small hole in the ecu case where the 4x coils wire and Tach signal will pass thru.
+
+4. Disconnect the ICM signal from the Distributor and Connect it with the BMCOP
+->On the ecu connectors, cut the wire at A21 (ICM) and leave a couple inches (~6") free so you can reconnect the wire later
+  if you want to run again on the distributor
+->Connect A21 with the BMCop, you can choose between: 
+  -soldering A21 wire on the ECU connectors Pins inside the ECU
+  -Use the A21 wire cut outside on the ECU connectors and connect it with the BMCOP
+->Keep disconnected the A21 wire going into the firewall (going to the distributor)
+
+5. Disconnect the 12V Power Source on the Distributor (Black/Yel) wire so the Distributor Coil is not powered
+
+6. Connect A25 (12V) with the BMCOP 
+(Solder the wire on A25 pin inside the ecu or tap the wire with A25 outside the ecu)
+
+7. Connect the Tach Signal (RPM) with the BMCOP
+(Connecting the tach signal can be a little tricky and differ for some cars models)
+->On most 88-98 models, the Tach signal is the blue wire on the Distributor Connector
+  -You need to disconnect/cut the blue wire going to the distributor and connect the blue wire
+   thats on the engine harness side with the BMCOP
+->On some 99-00 models, the Tach signal is tapped/splitted with the ICM signal near the ecu connectors, close to the firewall
+  -If you find where the tap/split is with the icm wire, cut the wire from being connected with ICM wire and
+   connect the wire with the BMCOP
+->If you dont find the tach signal wire or spend time on searching, located in the engine bay at the shock tower on the driver side
+  you can find a single blue wire connector thats not connected to anything generally, Connect a wire from this blue wire
+  to the Tach RPM Signal on the BMCOP
+  
+8. Remove the Spark Plugs wires completly and install the Coils Pack
+-> You'll need to bring 12v and Ground to each Coils Pack
+   -For a protected circuit, its recommanded to put a 10A fuse on the 12V wire that power all the coils
+   -Connect the 12V wire that power the coils with an 12V Ignition (Key 'ON' only, not a 12V accessory)
+-> Connect each Coils Pack Trigger Wire to the appropriate Coil Pin on the BMCOP
+
+*NOT REQUIRED* Remove the Coil and Ignition Control Module inside the Distributor
+-> This step in not required for testing the product, however if the product works correctly and you
+   want a permanent installation, it might be recommanded to pull out the Coil and Ignition Control Module 
+   inside the distributor. The Cap Rotor can also be removed safely.
+   
+
+***********************************************************************/
+TESTING THE PRODUCTS AND AVAILABLES OPTIONS:
+***********************************************************************/
+The BMCOP is ready to be tested upon receiving it. When the installation is done, just turn the Key ON and give it a try!
+
+The BMCOP come with 2x custom features for my Testers to try and inform me whats better 
+to be used as default on the final version. (Public production version)
+
+->Wasted Spark(WS) Feature: If enabled it fire 2x concecutives cylinders at the same time (1-4) and (2-3) fires in pair.
+							Else it fire individually the cylinders (1-3-4-2)
+						
+->Fast Sync(FS) Feature: If enabled it will start firing the coils slightly earlier when starting the engine and wont wait
+						on a full crank revolution to start firing them. This is for Testing purpose to exactly know if
+						this feature can be enabled without causing issues. If it doesn't work correctly, the coils will
+						fire on the wrong cylinders (unsynced) for the first crank revolution. Testers has to report if 
+						it's safe to enable this feature and keep it enabled for the final version.
+					 
+The BMCOP has Wasted Spark(WS) and Fast Sync(FS) DISABLED by default when you receive them.
+
+4x Files come with the BMCOP for testing purpose:
+-BMCopV3_NO_WS_NO_FS.uf2 		(Default file, wasted spark disabled and fast sync disabled)
+-BMCopV3_NO_WS_WITH_FS.uf2		(wasted spark disabled and fast sync enabled)
+-BMCopV3_WITH_WS_NO_FS.uf2		(wasted spark enabled and fast sync disabled)
+-BMCopV3_WITH_WS_WITH_FS.uf2	(wasted spark enabled and fast sync enabled)
+
+
+***********************************************************************/
+HOW TO CHANGE THE PROGRAM CODE FILE ON THE BMCOP:
+***********************************************************************/
+You can notice 5x tiny holes aligned on the BMCOP board with 'DIAG' near the holes and that 2x of the holes are encircled,
+you'll need to touch/connect the 2x holes together to put the BMCOP into 'Boot Mode'
+
+->Use the tiny metal pins I gave with the BMCop, insert them in the 2x holes and make the 2x pins touch themselves for easier Boot Mode
+
+TO ENTER BOOT MODE:
+-At first, make sure the USB is disconnected, is the BMCOP is still in the vehicule, make sure the Ignition Key is OFF and 
+ the ecu is not be powered or remove the the BMCOP from the ecu the time you update the firmware.
+-Make sure the 2x pins/holes of DIAG on the BMCOP are connected together
+-Connect a USB-C cable to the BMCOP with your computer
+->If the 2x pins are NOT correctly touching/connected together, nothing will happens on your computer, no windows are showing up
+  -In that case just disconnect the USB, make sure again that the 2 pins are connected together and repeat (reconnect USB, etc)
+  -You can hold the two pins with your fingers when plugging the USB
+->If the 2x pins are correctly touching/connected together, you'll see a windows pop upon connecting the USB cable on your
+  computer just like you would have connected a USB memory stick, SD Card or something similar.
+-Drag and Drop the XXXX.uf2 file directly into the BMCOP and the BMCOP will reboot itself 2sec after.
+-You can disconnect the 2pins before dropping the .uf2 file so that when the BMCOP reboot 2sec after dropping the .uf2 is doesn't 
+restart in 'Boot Mode' and confuse you.
+  
+
