@@ -2,6 +2,8 @@
 
 The BMCOP is a Coil On Plug Project made with Pico2 RP2354 for Honda/Acura running on OBD1 ecus and with a distributor.
 
+[PURCHASE THE BMCOP!]
+
 # Introduction
 
 The BMCOP need 3x Signal Inputs pins to acheive triggering all the four(4x) Coils (ICM, FC1 Pin3, FC1 Pin4)
@@ -43,4 +45,4 @@ If you want to edit the Defaults Parameters, you can download and use the BMCOP 
 ![alt tag](https://github.com/bouletmarc/BMCOPV3/blob/main/BMCop%20Editor/BMCOP_EDITOR.png?raw=true)
 
 
-[Clic HERE to Check my others Products!]:<https://bmdevs.fwscheckout.com/>
+[PURCHASE THE BMCOP!]:<https://bmdevs-shop.com/>
