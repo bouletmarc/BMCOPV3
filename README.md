@@ -9,17 +9,17 @@ The BMCOP can output RPM Signal for the Tachometer
 
 # Editable Parameters and Features
 
--Wastedspark
--RPM Output Invert
--Long Pulse under 2step
--Desync Time (ticks)
--Firing Order
--Threshold for 'Resync's' Events
--Tach correction (RPM Output)
--Datalogging*
--Error Report (Red Led flashes error codes and datalog can show error code)
--Firmwares can be updated easily
--BMCOP Editor Software
+- Wastedspark
+- RPM Output Invert
+- Long Pulse under 2step
+- Desync Time (ticks)
+- Firing Order
+- Threshold for 'Resync's' Events
+- Tach correction (RPM Output)
+- Datalogging*
+- Error Report (Red Led flashes error codes and datalog can show error code)
+- Firmwares can be updated easily
+- BMCOP Editor Software
 
 # Installation
 
