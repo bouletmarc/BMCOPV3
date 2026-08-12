@@ -44,5 +44,13 @@ If you want to edit the Defaults Parameters, you can download and use the BMCOP 
 
 ![alt tag](https://github.com/bouletmarc/BMCOPV3/blob/main/BMCop%20Editor/BMCOP_EDITOR.png?raw=true)
 
+# Updating Firmware
+
+1. Press and Hold the 'Boot' Button on the BMCOP
+2. Plug the USB to your computer
+3. When you see the 'BMCOP Folder' opening on your 
+    windows you can release the button
+4. Drag and Drop the new Firmware in the Folder
+5. The BMCOP will reboot with the Updated Firmware!
 
 [PURCHASE THE BMCOP!]:<https://bmdevs-shop.com/>
