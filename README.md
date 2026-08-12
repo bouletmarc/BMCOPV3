@@ -50,7 +50,7 @@ If you want to edit the Defaults Parameters, you can download and use the BMCOP 
 2. Plug the USB to your computer
 3. When you see the 'BMCOP Folder' opening on your 
     windows you can release the button
-4. Drag and Drop the new Firmware in the Folder
+4. Drag and Drop the new Firmware in the Folder (Select the correct .uf2 firmware matching your Board Version!)
 5. The BMCOP will reboot with the Updated Firmware!
 
 [PURCHASE THE BMCOP!]:<https://bmdevs-shop.com/>
