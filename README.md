@@ -11,9 +11,9 @@ The BMCOP can output RPM Signal for the Tachometer
 
 # Editable Parameters and Features
 
-- Wastedspark
-- RPM Output Invert
-- Long Pulse under 2step
+- Wastedspark (Enable/Disable) (Disabled by Default)
+- RPM Output Invert (Enable/Disable) (Disabled by Default)
+- Long Pulse under 2step (Enable/Disable) (Disabled by Default)
 - Desync Time (ticks)
 - Firing Order
 - Threshold for 'Resync's' Events
